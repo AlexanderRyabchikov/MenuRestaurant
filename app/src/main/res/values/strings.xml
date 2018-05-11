@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">MenuRestaurant</string>
+    <string name="app_name">Заказ еды</string>
+    <string name="title_app">Меню</string>
+    <string name="menuItem1">Меню</string>
+    <string name="menuItem2">Акции</string>
+    <string name="menuItem3">Бонусы</string>
+    <string name="menuItem4">Бронь</string>
+    <string name="menuItem5">Другое</string>
 </resources>
