@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <LinearLayout
+    tools:context="com.example.alexander.menurestaurant.MainActivity">
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:id="@+id/listViewLinearLayout"
-        android:orientation="vertical">
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="match_parent">
 
-        <ListView
-            android:id="@+id/listViewMenu"
+        <LinearLayout
+            android:id="@+id/listViewLinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomMenuLinearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <ListView
+                android:id="@+id/listViewMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,16 +39,16 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="6dp"
+            android:background="@color/colorPrimary"
             android:layout_height="match_parent">
-            <TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:id="@+id/item_menu"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:src="@drawable/ic_action_item_menu1"
                     />
                 <ImageButton
@@ -45,12 +56,12 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:id="@+id/item_promo"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:src="@drawable/ic_action_item_menu2"
                     />
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:id="@+id/item_bonus"
@@ -60,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:id="@+id/item_rental"
                     android:src="@drawable/ic_action_item_menu4"
                     />
@@ -68,18 +79,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:id="@+id/item_other"
                     android:src="@drawable/ic_action_item_menu5"
                     />
             </TableRow>
-            <TableRow>
+            <TableRow
+                android:layout_marginBottom="6dp">
                 <TextView
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:textColor="@color/textColorSubMenu"
                     android:text="@string/menuItem1"
                     android:textAlignment="center"
@@ -90,7 +102,7 @@
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:textColor="@color/textColorSubMenu"
                     android:text="@string/menuItem2"
                     android:textAlignment="center"
@@ -101,7 +113,7 @@
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:textColor="@color/textColorSubMenu"
                     android:text="@string/menuItem3"
                     android:textAlignment="center"
@@ -112,7 +124,7 @@
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:textColor="@color/textColorSubMenu"
                     android:text="@string/menuItem4"
                     android:textAlignment="center"
@@ -123,7 +135,7 @@
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:textColor="@color/textColorSubMenu"
                     android:text="@string/menuItem5"
                     android:textAlignment="center"
@@ -131,4 +143,5 @@
             </TableRow>
         </TableLayout>
     </LinearLayout>
-</RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

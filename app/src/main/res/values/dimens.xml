@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="sizeNumber">10sp</dimen>
     <dimen name="sizeText">10sp</dimen>
     <dimen name="sizeTitleBar">20sp</dimen>
 </resources>

@@ -6,4 +6,5 @@
     <string name="menuItem3">Бонусы</string>
     <string name="menuItem4">Бронь</string>
     <string name="menuItem5">Другое</string>
+    <string name="searchHint">Поиск</string>
 </resources>
