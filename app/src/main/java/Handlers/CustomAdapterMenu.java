@@ -54,7 +54,7 @@ public class CustomAdapterMenu extends BaseAdapter {
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
         view = convertView;
-        if (view == null){
+        /*if (view == null){
             view = inflater.inflate(R.layout.item_list, viewGroup, false);
         }
         menu = getItem(i);
@@ -64,7 +64,7 @@ public class CustomAdapterMenu extends BaseAdapter {
         Picasso
                 .with(context)
                 .load(MenuApi.BASE_URL + menu.getBackroundItemPath())
-                .into(imageView);
+                .into(imageView);*/
         return view;
      }
 

@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ListView;
 
+import Handlers.RecyclerViewAdapter;
 import retrofit2.Call;
 
-import Handlers.CustomAdapterMenu;
 import Handlers.MenuApi;
 import Interfaces.JsonApi;
 import JsonModel.Menu;
@@ -41,9 +42,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onResponse(@NonNull Call call, @NonNull Response response) {
                 if(response.isSuccessful()){
                     Menu menus = (Menu) response.body();
-                    CustomAdapterMenu customAdapterMenu =
-                            new CustomAdapterMenu(getApplicationContext(), menus.getMainMenuList());
-                    listView.setAdapter(customAdapterMenu);
+                    LinearLayoutManager lLayout;
+                    lLayout = new LinearLayoutManager(MainActivity.this);
+                    RecyclerView recyclerView = findViewById(R.id.recycler_view);
+                    recyclerView.setLayoutManager(lLayout);
+                    RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getApplicationContext(), menus.getMainMenuList());
+                    recyclerView.setAdapter(recyclerViewAdapter);
                 }
             }
 
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.item_other).setOnClickListener(this);
         findViewById(R.id.search_item_menu).setOnClickListener(this);
         findViewById(R.id.shopping_basket).setOnClickListener(this);
-        listView = findViewById(R.id.listViewMenu);
+        //listView = findViewById(R.id.listViewMenu);
     }
 
     @Override
