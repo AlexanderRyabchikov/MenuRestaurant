@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ListView;
 
 import Handlers.RecyclerViewAdapter;
 import retrofit2.Call;
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String SEND_STRING = "dummy_string";
     private JsonApi menuApi;
-    private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     lLayout = new LinearLayoutManager(MainActivity.this);
                     RecyclerView recyclerView = findViewById(R.id.recycler_view);
                     recyclerView.setLayoutManager(lLayout);
+                    assert menus != null;
                     RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getApplicationContext(), menus.getMainMenuList());
                     recyclerView.setAdapter(recyclerViewAdapter);
                 }
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.item_other).setOnClickListener(this);
         findViewById(R.id.search_item_menu).setOnClickListener(this);
         findViewById(R.id.shopping_basket).setOnClickListener(this);
-        //listView = findViewById(R.id.listViewMenu);
     }
 
     @Override
@@ -74,8 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, DummyActivity.class);
         switch (view.getId()){
             case R.id.item_menu:
-                intent.putExtra(MainActivity.SEND_STRING, "Menu button");
-                startActivity(intent);
+                this.recreate();
                 break;
             case R.id.item_promo:
                 intent.putExtra(MainActivity.SEND_STRING, "Promo button");
