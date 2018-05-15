@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardUseCompatPadding="true"
-    android:background="@null"
+    card_view:cardElevation="0dp"
+    android:background="@color/backgroundList"
     card_view:cardCornerRadius="6dp"
     android:layout_margin="10dp">
 
