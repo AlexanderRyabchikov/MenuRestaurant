@@ -1,6 +1,5 @@
 package com.example.alexander.menurestaurant;
 
-import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -9,15 +8,13 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.TextView;
 
-import com.example.alexander.menurestaurant.Handlers.RecyclerViewAdapter;
+import Handlers.RecyclerViewAdapter;
 import retrofit2.Call;
 
-import com.example.alexander.menurestaurant.Handlers.MenuApi;
-import com.example.alexander.menurestaurant.Interfaces.JsonApi;
-import com.example.alexander.menurestaurant.JsonModel.Menu;
+import Handlers.MenuApi;
+import Interfaces.JsonApi;
+import JsonModel.Menu;
 import retrofit2.Callback;
 import retrofit2.Response;
 
@@ -25,16 +22,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String SEND_STRING = "dummy_string";
     private JsonApi menuApi;
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
-        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         initButton();
-        TextView textView = findViewById(R.id.total_price);
         menuApi = MenuApi.getRetrofit().create(JsonApi.class);
         getMenuJson();
     }
@@ -50,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     lLayout = new LinearLayoutManager(MainActivity.this);
                     RecyclerView recyclerView = findViewById(R.id.recycler_view);
                     recyclerView.setLayoutManager(lLayout);
+                    assert menus != null;
                     RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getApplicationContext(), menus.getMainMenuList());
                     recyclerView.setAdapter(recyclerViewAdapter);
                 }
@@ -70,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.item_other).setOnClickListener(this);
         findViewById(R.id.search_item_menu).setOnClickListener(this);
         findViewById(R.id.shopping_basket).setOnClickListener(this);
-        //listView = findViewById(R.id.listViewMenu);
     }
 
     @Override
@@ -78,8 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, DummyActivity.class);
         switch (view.getId()){
             case R.id.item_menu:
-                intent.putExtra(MainActivity.SEND_STRING, "Menu button");
-                startActivity(intent);
+                this.recreate();
                 break;
             case R.id.item_promo:
                 intent.putExtra(MainActivity.SEND_STRING, "Promo button");
