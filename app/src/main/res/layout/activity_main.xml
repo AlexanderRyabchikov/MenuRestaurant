@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.alexander.menurestaurant.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/separator"
+            android:id="@+id/viewItemBinderBar" />
+    </LinearLayout>
     <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -14,17 +24,30 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
+            android:id="@+id/layoutRecycler"
             android:layout_above="@+id/bottomMenuLinearLayout"
             tools:context=".MainActivity">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical" />
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/layoutRecycler">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/separator"
+                android:id="@+id/viewItemBinder" />
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

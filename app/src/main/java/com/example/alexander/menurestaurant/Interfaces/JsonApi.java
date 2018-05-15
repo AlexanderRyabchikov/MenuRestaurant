@@ -1,6 +1,6 @@
-package Interfaces;
+package com.example.alexander.menurestaurant.Interfaces;
 
-import JsonModel.Menu;
+import com.example.alexander.menurestaurant.JsonModel.Menu;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

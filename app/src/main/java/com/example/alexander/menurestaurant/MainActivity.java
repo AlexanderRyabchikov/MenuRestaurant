@@ -1,5 +1,6 @@
 package com.example.alexander.menurestaurant;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,14 +9,15 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ListView;
+import android.view.WindowManager;
+import android.widget.TextView;
 
-import Handlers.RecyclerViewAdapter;
+import com.example.alexander.menurestaurant.Handlers.RecyclerViewAdapter;
 import retrofit2.Call;
 
-import Handlers.MenuApi;
-import Interfaces.JsonApi;
-import JsonModel.Menu;
+import com.example.alexander.menurestaurant.Handlers.MenuApi;
+import com.example.alexander.menurestaurant.Interfaces.JsonApi;
+import com.example.alexander.menurestaurant.JsonModel.Menu;
 import retrofit2.Callback;
 import retrofit2.Response;
 
@@ -23,14 +25,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String SEND_STRING = "dummy_string";
     private JsonApi menuApi;
-    private ListView listView;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         initButton();
+        TextView textView = findViewById(R.id.total_price);
         menuApi = MenuApi.getRetrofit().create(JsonApi.class);
         getMenuJson();
     }

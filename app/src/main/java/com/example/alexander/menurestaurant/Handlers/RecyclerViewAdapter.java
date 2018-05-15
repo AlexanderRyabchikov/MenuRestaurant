@@ -1,4 +1,4 @@
-package Handlers;
+package com.example.alexander.menurestaurant.Handlers;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +10,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import JsonModel.MainMenu;
+import com.example.alexander.menurestaurant.JsonModel.MainMenu;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolders> {
 

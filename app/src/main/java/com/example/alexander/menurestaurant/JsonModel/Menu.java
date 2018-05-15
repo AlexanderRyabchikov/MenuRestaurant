@@ -1,4 +1,4 @@
-package JsonModel;
+package com.example.alexander.menurestaurant.JsonModel;
 
 import com.google.gson.annotations.SerializedName;
 
