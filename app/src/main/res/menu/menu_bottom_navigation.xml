@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_menu"
+        android:enabled="true"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_action_item_menu1"
+        android:title="@string/menuItem1" />
+    <item
+        android:id="@+id/item_promo"
+        android:enabled="true"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_action_item_menu2"
+        android:title="@string/menuItem2" />
+    <item
+        android:id="@+id/item_bonus"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_item_menu3"
+        android:title="@string/menuItem3"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/item_rental"
+        android:enabled="true"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_action_item_menu4"
+        android:title="@string/menuItem4" />
+    <item
+        android:id="@+id/item_other"
+        android:enabled="true"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_action_item_menu5"
+        android:title="@string/menuItem5" />
+</menu>

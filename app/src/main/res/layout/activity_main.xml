@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.alexander.menurestaurant.MainActivity">
 
 
@@ -15,7 +16,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:foreground="@drawable/separator"
+            android:background="@drawable/separator"
             android:id="@+id/viewItemBinderTop" />
 
         <RelativeLayout
@@ -42,117 +43,20 @@
         android:background="@color/colorPrimary"
         android:id="@+id/bottomMenuLinearLayout"
         android:layout_alignParentBottom="true">
-         <View
+        <View
              android:layout_width="match_parent"
              android:layout_height="1dp"
              android:background="@drawable/separator"
              android:id="@+id/viewItemBinder" />
-
-        <TableLayout
+        <android.support.design.widget.BottomNavigationView
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
-            android:layout_height="match_parent">
-            <TableRow
-                android:layout_marginTop="10dp">
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/item_menu"
-                    android:background="@color/colorPrimary"
-                    android:src="@drawable/ic_action_item_menu1"
-                    />
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/item_promo"
-                    android:background="@color/colorPrimary"
-                    android:src="@drawable/ic_action_item_menu2"
-                    />
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/item_bonus"
-                    android:src="@drawable/ic_action_item_menu3"
-                    />
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimary"
-                    android:id="@+id/item_rental"
-                    android:src="@drawable/ic_action_item_menu4"
-                    />
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimary"
-                    android:id="@+id/item_other"
-                    android:src="@drawable/ic_action_item_menu5"
-                    />
-            </TableRow>
-            <TableRow
-                android:layout_marginBottom="6dp">
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/textColorSubMenu"
-                    android:text="@string/menuItem1"
-                    android:textAlignment="center"
-                    tools:ignore="SmallSp" />
-
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/textColorSubMenu"
-                    android:text="@string/menuItem2"
-                    android:textAlignment="center"
-                    tools:ignore="SmallSp" />
-
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/textColorSubMenu"
-                    android:text="@string/menuItem3"
-                    android:textAlignment="center"
-                    tools:ignore="SmallSp" />
-
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/textColorSubMenu"
-                    android:text="@string/menuItem4"
-                    android:textAlignment="center"
-                    tools:ignore="SmallSp" />
-
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:textSize="@dimen/sizeText"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/textColorSubMenu"
-                    android:text="@string/menuItem5"
-                    android:textAlignment="center"
-                    tools:ignore="SmallSp" />
-            </TableRow>
-        </TableLayout>
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavigationView"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@color/navigation_item_state"
+            app:itemTextColor="@color/navigation_item_state"
+            app:menu="@menu/menu_bottom_navigation"
+            />
     </LinearLayout>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
