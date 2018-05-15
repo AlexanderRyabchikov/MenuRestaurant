@@ -9,12 +9,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import Handlers.RecyclerViewAdapter;
+import com.example.alexander.menurestaurant.Handlers.RecyclerViewAdapter;
 import retrofit2.Call;
 
-import Handlers.MenuApi;
-import Interfaces.JsonApi;
-import JsonModel.Menu;
+import com.example.alexander.menurestaurant.Handlers.MenuApi;
+import com.example.alexander.menurestaurant.Interfaces.JsonApi;
+import com.example.alexander.menurestaurant.JsonModel.Menu;
 import retrofit2.Callback;
 import retrofit2.Response;
 
