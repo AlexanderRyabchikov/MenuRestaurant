@@ -5,4 +5,6 @@
     <dimen name="sizeTitleBar">20sp</dimen>
     <dimen name="design_bottom_navigation_text_size" tools:ignore="PrivateResource">10sp</dimen>
     <dimen name="design_bottom_navigation_active_text_size" tools:ignore="PrivateResource">10sp</dimen>
+    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
 </resources>
