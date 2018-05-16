@@ -88,10 +88,10 @@ public class MainActivity extends AppCompatActivity
                                 intent.putExtra(MainActivity.SEND_STRING, "Rental button");
                                 startActivity(intent);
                                 break;
-                            case R.id.item_other:
+                            /*case R.id.item_other:
                                 intent.putExtra(MainActivity.SEND_STRING, "Other button");
                                 startActivity(intent);
-                                break;
+                                break;*/
                         }
                         return true;
                     }

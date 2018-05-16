@@ -50,6 +50,7 @@
              android:id="@+id/viewItemBinder" />
         <android.support.design.widget.BottomNavigationView
             android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
             android:layout_height="wrap_content"
             android:id="@+id/bottomNavigationView"
             app:itemBackground="@color/colorPrimary"
